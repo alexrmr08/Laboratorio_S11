@@ -1,4 +1,4 @@
-public class Batido extends Cafe {{
+public class Batido extends Cafe {
 
     private static final double[] PRECIOS = {0.89, 0.99, 1.09}; // N, M, G
 
