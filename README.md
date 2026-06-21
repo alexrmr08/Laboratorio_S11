@@ -81,7 +81,61 @@ Crema.costo()
             └── TostadoNegro.costo()
 ```
 
-## 5. Como ejecutar 
+## 5. Esquema de dependencias del patrón Decorator
+
+### 5.1 Estructura base
+
+```text
+            Cafe (Abstract)
+          /      |       |      \
+Tostado  Batido  Descaf.  Expreso
+```
+
+---
+
+### 5.2 Decorador base
+
+```text
+     DecoradorComplemento (Abstract)
+              |
+  ----------------------------
+  |     |      |       |
+Leche  Moca   Soya   Crema
+```
+
+---
+
+### 5.3 Relación general
+
+```text
+Cafe
+ │
+ ▼
+DecoradorComplemento
+ │
+ ▼
+Complementos (Leche, Moca, Soya, Crema)
+```
+
+---
+
+### 5.4 Ejemplo de composición
+
+```text
+Expreso
+  ↓
+Leche
+  ↓
+Soya
+  ↓
+Crema
+  ↓
+Moca
+```
+
+---
+
+## 6. Como ejecutar 
 
 ### - IntelliJ IDEA: 
 
@@ -104,4 +158,32 @@ Crema.costo()
 ```bash
 javac *.java
 java Main
+```
+
+## 7. Salida esperada: 
+
+```text 
+==========================================
+     BIENVENIDO A CAFETERIA EL NEGRITO
+==========================================
+
+a) Expreso + Leche + Soya + Crema + Moca [NORMAL]
+Descripcion : Cafe Expreso, Leche, Soya, Crema, Moca
+Tamanio     : NORMAL
+Total       : $2.54
+
+b) Descafeinado + 2xMoca + Soya + Leche [NORMAL]
+Descripcion : Cafe Descafeinado, Moca, Moca, Soya, Leche
+Tamanio     : NORMAL
+Total       : $1.70
+
+c) Batido + 2xMoca + 2xSoya + 2xLeche + 2xCrema [NORMAL]
+Descripcion : Cafe Batido, Moca, Moca, Soya, Soya, Leche, Leche, Crema, Crema
+Tamanio     : NORMAL
+Total       : $1.99
+
+d) Tostado Negro + 3xSoya + 2xCrema [NORMAL]
+Descripcion : Cafe Tostado Negro, Soya, Soya, Soya, Crema, Crema
+Tamanio     : NORMAL
+Total       : $1.64
 ```
