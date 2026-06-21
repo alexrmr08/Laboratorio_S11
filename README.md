@@ -83,55 +83,27 @@ Crema.costo()
 
 ## 5. Esquema de dependencias del patrón Decorator
 
-### 5.1 Estructura base
+### 5.1 Pedido A
 
-```text
-            Cafe (Abstract)
-          /      |       |      \
-Tostado  Batido  Descaf.  Expreso
-```
+![Esquema A](imagenes/PedidoA.png)
 
 ---
 
-### 5.2 Decorador base
+### 5.2 Pedido B
 
-```text
-     DecoradorComplemento (Abstract)
-              |
-  ----------------------------
-  |     |      |       |
-Leche  Moca   Soya   Crema
-```
+![Esquema B](imagenes/PedidoB.png)
 
 ---
 
-### 5.3 Relación general
+### 5.3 Pedido C
 
-```text
-Cafe
- │
- ▼
-DecoradorComplemento
- │
- ▼
-Complementos (Leche, Moca, Soya, Crema)
-```
+![Esquema C](imagenes/PedidoC.png)
 
 ---
 
-### 5.4 Ejemplo de composición
+### 5.4 Pedido D
 
-```text
-Expreso
-  ↓
-Leche
-  ↓
-Soya
-  ↓
-Crema
-  ↓
-Moca
-```
+![Esquema D](imagenes/PedidoD.png)
 
 ---
 
